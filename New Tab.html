@@ -1,8 +1,19 @@
 <html>
  <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head> 
 
-$( document ).ready(function() {
+<iframe name="iframe"></iframe>
+<script type="text/javascript">
+
+var data=JSON.stringify({
+    "refId":585,
+    "phone":"0674444444"
+ });
+
+console.log("sample",data)
+
+	$( document ).ready(function() {
 
     $.ajax({
 'url':'https://finalroundthenleave.herokuapp.com/demo1',
@@ -17,11 +28,6 @@ success:function(result){
 
 
 	});
-	</script>
-</head> 
-	
-	
-
-<iframe name="iframe"></iframe>
-
+    
+</script>
 </html>
