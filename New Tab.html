@@ -20,48 +20,17 @@ console.log("sample",data)
 
 	$( document ).ready(function() {
 
-var basicQuery = function ()
-{    
-      var url = ‘https://finalroundthenleave.herokuapp.com/demo1';
-      var method = ‘GET';
-      var xhr = new XMLHttpRequest();
-       
-      if (“withCredentials” in xhr) {           
-           // Most browsers.       
-            xhr.open(method, url, true);
-            xhr.setRequestHeader(“Access-Control-Allow-Origin”, “https://<ORIGINSERVER>)”);
-            xhr.setRequestHeader(“Access-Control-Allow-Credentials”, “true”);
-            xhr.setRequestHeader(“Access-Control-Allow-Methods”, “GET”);
-      } else if (typeof XDomainRequest != “undefined”) {
-                 // IE8 & IE9      
-           xhr = new XDomainRequest();
-           xhr.open(method, url);
-      } else {
-           // CORS not supported.
-           xhr = null;
-      }
- 
-      if (xhr != null)
-      {                
-            xhr.followsRedirect=false;          
-            xhr.withCredentials=true;
- 
-            xhr.onreadystatechange  = function() {
-                  if(xhr.readyState==4)
-                  {
-                        if(xhr.status == 200)
-                        {
-                              alert(xhr.responseText);                 
-                        }
-                        else
-                        {
-                              alert(“error”);
-                        }
-                  }
-            }
-            xhr.send();
-      }
+    $.ajax({
+'url':'https://finalroundthenleave.herokuapp.com/demo1',
+'method':'GET',
+success:function(result){
+	alert(result);
+
 }
+})
+
+
+
 
 	});
     
