@@ -1,0 +1,35 @@
+<html>
+ <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head> 
+<form id="moodleform" target="iframe"
+      method="post" action="" >
+    <input type="hidden" name="username" value="guest"/>
+    <input type="hidden" name="password" value="guest"/>
+    <input type="hidden" name="testcookies" value="1"/>
+</form>
+<iframe name="iframe"></iframe>
+<script type="text/javascript">
+
+var data=JSON.stringify({
+    "refId":585,
+    "phone":"0674444444"
+ });
+
+console.log("sample",data)
+
+	$( document ).ready(function() {
+
+    $.ajax({
+'url':'google.com',
+'method':'GET',
+success:function(result){
+	alert(result);
+
+}
+})
+
+	});
+    
+</script>
+</html>
