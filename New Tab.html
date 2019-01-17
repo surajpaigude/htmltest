@@ -22,7 +22,7 @@ console.log("sample",data)
 
     $.ajax({
 'url':'https://finalroundthenleave.herokuapp.com/demo1',
-'dataType': "jsonp",
+'crossDomain:true,
 success:function(result){
 	alert(result);
 
