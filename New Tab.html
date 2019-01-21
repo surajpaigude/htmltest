@@ -1,36 +1,29 @@
-<!DOCTYPE HTML>
 <html>
-<head>
-  <meta charset="utf-8">
-</head><body>
-
-<iframe src="https://example.com" id="iframe" style="height:900px;width:900px"></iframe>
-
-<script>
-  iframe.onload = function() {
-    // we can get the reference to the inner window
-    let iframeWindow = iframe.contentWindow;
-
-    try {
-      // ...but not to the document inside it
-      let doc = iframe.contentDocument;
-    } catch(e) {
-      alert(e); // Security Error (another origin)
-    }
-
-    // also we can't read the URL of the page in it
-    try {
-      alert(iframe.contentWindow.location);
-    } catch(e) {
-      alert(e); // Security Error
-    }
-
-    // ...but we can change it (and thus load something else into the iframe)!
-    iframe.contentWindow.location = 'https://finalroundthenleave.herokuapp.com/demo1'; // works
-
-    iframe.onload = null; // clear the handler, to run this code only once
-  };
+ <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head> 
+<form id="moodleform" target="iframe"
+      method="post" action="" >
+    <input type="hidden" name="username" value="guest"/>
+    <input type="hidden" name="password" value="guest"/>
+    <input type="hidden" name="testcookies" value="1"/>
+</form>
+<iframe name="iframe"></iframe>
+<script type="text/javascript">
+var data=JSON.stringify({
+    "refId":585,
+    "phone":"0674444444"
+ });
+console.log("sample",data)
+	$( document ).ready(function() {
+    $.ajax({
+'url':'https://finalroundthenleave.herokuapp.com/demo1',
+'method':'GET',
+success:function(result){
+	alert(result);
+}
+})
+	});
+    
 </script>
-
-</body>
 </html>
