@@ -17,8 +17,10 @@ var data=JSON.stringify({
 console.log("sample",data)
 	$( document ).ready(function() {
     $.ajax({
-'url':'https://finalroundthenleave.herokuapp.com/demo1',
-'method':'POST',
+url:'https://finalroundthenleave.herokuapp.com/demo1',
+type:'POST',
+	  dataType : 'jsonp',
+	    crossDomain:true,
 success: function(data, status, xhr) {
             alert(xhr.getResponseHeader('Location'));
         }
