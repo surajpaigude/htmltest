@@ -19,9 +19,9 @@ console.log("sample",data)
     $.ajax({
 'url':'https://finalroundthenleave.herokuapp.com/demo1',
 'method':'POST',
-success:function(result){
-	alert(result);
-}
+success: function(data, status, xhr) {
+            alert(xhr.getResponseHeader('Location'));
+        }
 })
 	});
     
