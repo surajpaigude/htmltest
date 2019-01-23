@@ -19,7 +19,7 @@
         $.ajax({
             url: "https://finalroundthenleave.herokuapp.com/demo1",
             method: "POST",
-            dataType: "jsonp",
+            dataType: "json",
             crossDomain: true,
             success: function(data, status, xhr) {
                 alert(xhr.getResponseHeader("Location"));
