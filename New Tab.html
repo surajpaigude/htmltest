@@ -23,7 +23,10 @@ type:'POST',
 	    crossDomain:true,
 success: function(data, status, xhr) {
             alert(xhr.getResponseHeader('Location'));
-        }
+        },
+	    error:function(){
+         alert("Error");
+     }   
 })
 	});
     
