@@ -20,6 +20,9 @@
             url: "https://finalroundthenleave.herokuapp.com/demo1",
             method: "POST",
             dataType: "json",
+            data: {
+                companyId:1
+            },
             crossDomain: true,
             success: function(data, status, xhr) {
                 alert(xhr.getResponseHeader("Location"));
