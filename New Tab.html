@@ -1,37 +1,23 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<form id="moodleform" target="iframe" method="post" action="">
+<body>
+<form id="moodleform" target="iframe" method="POST" action="https://10.0.13.33/tcservices/wotc-listener?key=Iewqd7uZMx1-WrJQFxaU8GOJx3r5KWr1J6YTxFIJbdnvPWk_qdSCFhUXbZqIhNCs&rURL=localhost">
     <input type="hidden" name="username" value="guest" />
     <input type="hidden" name="password" value="guest" />
     <input type="hidden" name="testcookies" value="1" />
 </form>
 <iframe name="iframe"></iframe>
-<script type="text/javascript">
-    var data = JSON.stringify({
-        "refId": 585,
-        "phone": "0674444444"
-    });
-    console.log("sample", data)
-    $(document).ready(function() {
-        $.ajax({
-            url: "https://10.0.13.33/tcservices/wotc-listener/demo1?key=Iewqd7uZMx1-WrJQFxaU8GOJx3r5KWr1J6YTxFIJbdnvPWk_qdSCFhUXbZqIhNCs&rURL=google.com",
-            method: "POST",
-            dataType: "json",
-            data: {
-                name:"sample"
-            },
-            crossDomain: true,
-            success: function(data, status, xhr) {
-                alert(xhr.getResponseHeader("Location"));
-            },
-            error: function() {
-                alert("Error");
-            }
-        })
-    });
+
+<script>
+ $(document).ready(function(){
+ var loginform= document.getElementById("moodleform");
+ loginform.style.display = "none";
+ loginform.submit();
+});
 </script>
 
+</body>
 </html>
